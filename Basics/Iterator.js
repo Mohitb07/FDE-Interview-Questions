@@ -139,3 +139,29 @@ const helloWorld = new Words("Hello World");
 for (let word of helloWorld) {
   console.log(word);
 } // -> should log 'Hello' and 'World'
+
+// Challenge 7
+// Build a function that walks through an array and returns the element concatenated with the string "was found after index x", where x is the previous index.
+// Note: if it is the first element it should say that it is the first
+
+function valueAndPrevIndex(array) {
+  let index = 0;
+  const iterator = {
+    sentence: () => {
+      const element = array[index];
+      let indexName = index - 1;
+      const currentIndex = index;
+      index++;
+      if (currentIndex === 0) {
+        indexName = "First";
+      }
+      return `${element} was found after index ${indexName}`;
+    },
+  };
+  return iterator;
+}
+
+const returnedSentence = valueAndPrevIndex([4, 5, 6]);
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
+console.log(returnedSentence.sentence());
