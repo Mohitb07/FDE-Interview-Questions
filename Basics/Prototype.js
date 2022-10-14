@@ -73,3 +73,18 @@ class UserCreator {
 
 const classUser = new UserCreator("Mohit's Class", "123");
 console.log(classUser.getName());
+
+console.log("--------------------------------");
+
+// Write a reverse method on a string which can be used on every string values
+String.prototype.reverse = function () {
+  const string = this.toString();
+  let result = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    result += string[i];
+  }
+  return result;
+};
+
+const input = "hello world";
+console.log(input.reverse());
